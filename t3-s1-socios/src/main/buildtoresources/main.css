@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Monserrat";
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+}

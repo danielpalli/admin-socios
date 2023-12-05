@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+  db:
+    container_name: mariaDb
+    image: mariadb:11.1.2
+    restart: always
+    environment:
+      MARIADB_DATABASE: copaldb
+      MARIADB_USER: root
+      MARIADB_ROOT_PASSWORD: squad01
+      MARIADB_PASSWORD: squad01
+      MARIADB_ROOT_HOST: "%"
+    ports:
+      - 8080:3306
+    volumes:
+      - ./copal-db:/var/lib/mysql

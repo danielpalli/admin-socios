@@ -1,0 +1,85 @@
+<div class="w-full py-2 px-2" th:fragment="content">
+  <small>Copal | Gestión de usuarios | Nuevo socio</small>
+  <h2 class="py-2 text-3xl text-center">Nuevo Socio</h2>
+
+
+  <div class="container mx-auto overflow-y-auto" style="height: calc(100vh - 190px); ">
+
+    <div class="flex items-center justify-center">
+
+
+      <form th:action="@{/socios/save}" th:object="${request}" method="post" class="shadow-sm w-full py-5">
+
+        <div th:if="${#fields.hasErrors('*')}" class="flex justify-center pb-3">
+          <div class="w-1/3 bg-red-400 p-2 rounded-md shadow-md font-bold">
+            <ul class="px-5">
+              <li class="text-sm" th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-y-4">
+
+          <div class="flex justify-around">
+            <input type="text" th:field="*{nombreSocio}" placeholder="Nombre Socio" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+            <input type="text" th:field="*{cuit}" placeholder="CUIT" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+          </div>
+
+          <div class="flex justify-around">
+            <input type="text" th:field="*{email}" placeholder="Correo Electrónico" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+            <input type="text" th:field="*{paginaWeb}" placeholder="Página Web" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+          </div>
+
+          <div class="flex justify-around">
+            <input type="text" th:field="*{domicilio.provincia}" placeholder="Provincia" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+            <input type="text" th:field="*{domicilio.localidad}" placeholder="Localidad" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+          </div>
+
+          <div class="flex justify-around">
+            <input type="text" th:field="*{domicilio.calle}" placeholder="Dirección" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+            <div class="flex gap-x-2 w-1/3">
+              <input type="text" th:field="*{domicilio.altura}" placeholder="Altura" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+              <input type="text" th:field="*{domicilio.departamento}" placeholder="Departamento" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+              <input type="text" th:field="*{domicilio.piso}" placeholder="Piso" class="w-1/3 py-1 border-b-2 border-sky-100 focus:outline-none">
+            </div>
+          </div>
+
+          <div class="flex justify-around">
+            <select th:field="*{tipoSocio}"  class="w-1/3 p-2 border rounded-md focus:outline-none focus:ring focus:border-sky-300">
+              <option value="">Seleccionar Tipo Socio</option>
+              <option value="EMPRESA">EMPRESA</option>
+              <option value="CAMARA">CAMARA</option>
+            </select>
+
+            <select th:field="*{area}" class="w-1/3 p-2 border rounded-md focus:outline-none focus:ring focus:border-sky-300">
+              <option value="">Seleccionar Area</option>
+              <option value="BEBIDAS">BEBIDAS</option>
+              <option value="COMIDAS">COMIDAS</option>
+            </select>
+          </div>
+
+          <div class="flex justify-center items-center">
+            <small class="text-black pr-2">Logo:</small>
+            <label class="block">
+              <span class="sr-only">Seleccionar logo</span>
+              <input type="file" class="block w-full text-sm text-slate-500
+              file:mr-4 file:py-2 file:px-4
+              file:border-0
+              file:text-sm file:font-semibold
+              file:bg-violet-50 file:text-slate-500
+              hover:file:bg-violet-100
+            "/>
+            </label>
+          </div>
+
+        </div>
+
+        <div class="flex justify-around">
+          <button type="submit" class="flex px-14 py-3 bg-copalactive text-white items-center text-xs">ACEPTAR</button>
+          <a th:href="@{/socios}" class="flex px-14 py-3 bg-red-500 text-white items-center text-xs">CANCELAR</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

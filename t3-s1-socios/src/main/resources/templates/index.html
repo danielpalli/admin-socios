@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" th:href="@{/static/css/fontawesome-free-6.4.2-web/css/all.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/static/css/fonts/static/montserrat.css}">
+  <link  rel="stylesheet" type="text/css" th:href="@{/static/main.css}" />
+  <title th:text="${titulo}"></title>
+</head>
+  <body class="overflow-hidden">
+    <header th:replace="~{fragments/header::header}"></header>
+    <div class="flex">
+      <nav th:replace="~{fragments/sidebar::sidebar}"></nav>
+      <main th:replace="~{${contenido}::content}"></main>
+    </div>
+  </body>
+</html>

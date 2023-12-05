@@ -1,0 +1,64 @@
+<div class="w-full py-2 px-2" th:fragment="content">
+  <small>Copal | Gestión de Departamentos</small>
+  <h2 class="py-2 text-3xl text-center">Gestión de Departamentos</h2>
+  <div class="flex justify-end p-3">
+    <a th:href="@{/socios/crear-socio}" class="flex px-14 py-3 bg-copalactive text-white items-center text-xs gap-x-1">
+      <small><i class="fa-solid fa-plus border rounded-full p-[1.5px]"></i></small>AGREGAR
+    </a>
+  </div>
+
+  <div>
+
+    <div class="flex flex-col">
+
+      <div class="flex justify-between px-3">
+
+        <div class="flex items-center">
+          <h2 class="text-3xl text-teal-600">Departamentos Técnicos</h2>
+        </div>
+
+        <div class="flex items-center">
+          <ul class="flex gap-x-2 text-3xl text-teal-600">
+            <li><a th:href="@{/departamentos/crear-departamento}"><i
+              class="fa-solid fa-plus border rounded-full p-[1.5px]"></i></a></li>
+                      <li><a th:href="@{/departamentos/modificar/{id}(id=${departamento.idDepartamento})}"><i class="fa-solid fa-pen-to-square"></i></a></li>
+            <li><i class="fa-regular fa-trash-can"></i></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border">
+
+      <div class="flex py-2 px-3">
+        <div class="w-1/2 flex flex-col gap-y-2">
+          <h3 class="text-xl text-teal-600">Coordinación Departamentos Técnicos</h3>
+          <p class="text-sm">Darinka Aznulovich</p>
+          <h3 class="text-xl text-teal-600">Asistente de Departamentos Técnicos</h3>
+          <p class="text-sm">Juliana Cortez Danese</p>
+        </div>
+        <div class="w-1/2">
+
+          <h3 class="text-xl text-teal-600">Descripción</h3>
+          <p class="text-sm pt-1">COPAL cuenta con 7 Departamentos técnicos exclusivos para socios. Cada Departamento se
+            encuentra dirigido por profesionales altamente capacitados y con reconocida trayectoria en cada una de estas
+            áreas.</p>
+        </div>
+      </div>
+    </div>
+
+    <table class="text-center border w-full mt-5 text-white">
+      <thead class="bg-copalactive flex w-full">
+      <tr class="py-2 w-full flex justify-around">
+        <th>Nº</th>
+        <th>Logo</th>
+        <th>Nombre</th>
+        <th>Presidente</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody class="overflow-y-scroll flex flex-col" style="height: calc(100vh - 430px)">
+
+      </tbody>
+    </table>
+  </div>
+</div>

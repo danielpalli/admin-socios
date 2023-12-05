@@ -1,0 +1,43 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+node_modules/
+
+#Temporal ya que tendremos distintas configuraciones para este archivo
+!**/src/main/**/resources/application.properties
+
+!**/src/test/**/target/
+
+!**/src/main/**//
+
+copal-db/
+*.swp
+.dockerignore
+Dockerfile
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/

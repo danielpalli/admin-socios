@@ -1,0 +1,21 @@
+<div th:fragment="header" class="bg-copal flex justify-between px-8 py-4">
+  <div class="flex items-center">
+    <a href="#">
+      <img
+        th:src="@{../../static/images/Copal.png}"
+        alt="logo-de-copal"
+        class="w-48"
+      />
+    </a>
+  </div>
+  <div>
+    <a class="flex items-center gap-x-2" href="#">
+      <span class="text-white font-bold">Usuario</span>
+      <img
+        th:src="@{../../static/images/avatar.png}"
+        alt="logo-de-copal"
+        class=" h-16"
+      />
+    </a>
+  </div>
+</div>
